@@ -14,7 +14,7 @@ const Imagen = styled.img`
   width: 120px;
 `;
 
-const Texto = styled.div`
+const Texto = styled.p`
   font-size: 18px;
   span {
     font-weight: 700;
@@ -24,6 +24,7 @@ const Texto = styled.div`
 const Precio = styled.div`
   font-size: 24px;
   span {
+    color: goldenrod;
     font-weight: 700;
   }
 `;
@@ -45,18 +46,18 @@ const Resultado = ({ resultado }) => {
         <Texto>
           El Precio más alto del día: <span>{HIGHDAY}</span>
         </Texto>
-        <p>
-          El Precio más bajo del día <span>{LOWDAY}</span>
-        </p>
         <Texto>
-          Variación últimas 24hs <span>{CHANGEPCT24HOUR}</span>
+          El Precio más bajo del día <span>{LOWDAY}</span>
         </Texto>
         <Texto>
-          Última actualización <span>{LASTUPDATE}</span>
+          Variación últimas 24hs: <span>{CHANGEPCT24HOUR}</span>
+        </Texto>
+        <Texto>
+          Última actualización: <span>{LASTUPDATE}</span>
         </Texto>
       </div>
     </Contenedor>
   );
 };
 
-export default Contenedor;
+export default Resultado;
