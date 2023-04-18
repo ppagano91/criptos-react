@@ -48,17 +48,18 @@ const Formulario = ({ setMonedas }) => {
         return objeto;
       });
       setCriptos(arrayCriptos);
-      setMonedas({ moneda, criptomoneda });
     };
     consultarAPI();
   }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(moneda, criptomoneda);
     if ([moneda, criptomoneda].includes("")) {
       setError(true);
       return;
     }
     setError(false);
+    setMonedas({ moneda, criptomoneda });
   };
 
   return (
