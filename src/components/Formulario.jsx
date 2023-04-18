@@ -23,7 +23,7 @@ const InputSubmit = styled.input`
     cursor: pointer;
   }
 `;
-const Formulario = () => {
+const Formulario = ({ setMonedas }) => {
   const [criptos, setCriptos] = useState([]);
   const [error, setError] = useState(false);
   const [moneda, SelectMonedas] = useSelectMonedas("Elige tu Moneda", monedas);
@@ -48,6 +48,7 @@ const Formulario = () => {
         return objeto;
       });
       setCriptos(arrayCriptos);
+      setMonedas({ moneda, criptomoneda });
     };
     consultarAPI();
   }, []);
